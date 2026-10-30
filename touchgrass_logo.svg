@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Radiant Apple Spring Emerald Gradient -->
+    <linearGradient id="bgLush" x1="15%" y1="0%" x2="85%" y2="100%">
+      <stop offset="0%" stop-color="#30D158"/>
+      <stop offset="40%" stop-color="#10B981"/>
+      <stop offset="80%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#064E3B"/>
+    </linearGradient>
+
+    <!-- Center Hero Blade (Clean Crisp White to Pale Spring Mint) -->
+    <linearGradient id="heroLush" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="60%" stop-color="#F0FDF4"/>
+      <stop offset="100%" stop-color="#DCFCE7"/>
+    </linearGradient>
+
+    <!-- Left Blade (Vibrant Morning Mint) -->
+    <linearGradient id="leftLush" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="50%" stop-color="#E6FFFA" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#A7F3D0" stop-opacity="0.82"/>
+    </linearGradient>
+
+    <!-- Right Blade (Warm Meadow Jade) -->
+    <linearGradient id="rightLush" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="50%" stop-color="#ECFDF5" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#6EE7B7" stop-opacity="0.82"/>
+    </linearGradient>
+
+    <!-- Ambient Specular Dome -->
+    <radialGradient id="specLush" cx="30%" cy="15%" r="70%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.32"/>
+      <stop offset="40%" stop-color="#FFFFFF" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="shadowLush" x="-25%" y="-20%" width="150%" height="145%">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#022C22" flood-opacity="0.42"/>
+    </filter>
+  </defs>
+
+  <rect x="16" y="16" width="480" height="480" rx="115" ry="115" fill="url(#bgLush)"/>
+  <rect x="16" y="16" width="480" height="480" rx="115" ry="115" fill="url(#specLush)"/>
+  <rect x="17" y="17" width="478" height="478" rx="114" ry="114" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-opacity="0.28"/>
+
+  <g filter="url(#shadowLush)">
+    <!-- Ground root shadow -->
+    <ellipse cx="256" cy="416" rx="48" ry="8" fill="#022C22" opacity="0.28"/>
+
+    <!-- Left Blade: Lush, healthy width, swooping out in a gorgeous arc -->
+    <path d="M230 412 
+             C195 380 135 320 95 240 
+             C70 185 75 135 102 92 
+             C112 135 142 195 190 252 
+             C225 295 242 355 244 412 Z" 
+          fill="url(#leftLush)"/>
+
+    <!-- Right Blade: Lush, healthy width, balancing counter-arc -->
+    <path d="M270 412 
+             C305 380 365 320 405 240 
+             C430 185 425 135 398 92 
+             C388 135 358 195 310 252 
+             C275 295 258 355 256 412 Z" 
+          fill="url(#rightLush)"/>
+
+    <!-- Center Hero Blade: Tall, confident, substantial body with natural slight lean -->
+    <path d="M232 414 
+             C234 320 236 220 248 132 
+             C255 85 266 48 276 38 
+             C272 68 266 122 264 200 
+             C262 278 268 355 270 414 Z" 
+          fill="url(#heroLush)"/>
+
+    <!-- Rounded base root union -->
+    <path d="M228 412 C228 422 272 422 272 412 Z" fill="#DCFCE7" opacity="0.95"/>
+  </g>
+</svg>

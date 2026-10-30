@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TouchGrass</string>
+    <string name="tagline">Go for a walk</string>
+    <string name="accessibility_service_label">TouchGrass App Enforcer</string>
+    <string name="accessibility_service_description">Monitors active app launches to enforce focus lock, helping you step away and go for a walk.</string>
+    <string name="device_admin_label">TouchGrass Uninstall Protection</string>
+    <string name="device_admin_description">Prevents unauthorized uninstallation and tampering while focus sessions or passcode locks are active.</string>
+</resources>
