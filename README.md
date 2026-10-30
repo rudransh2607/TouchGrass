@@ -18,13 +18,14 @@ A clean, 100% offline digital wellbeing app for Android designed to help you bre
 
 ## 📦 Downloads
 Grab the latest signed release binary:
-- **[Download TouchGrass APK](https://github.com/)**
+- **[Direct Download TouchGrass APK (v1.0)](https://github.com/rudransh2607/TouchGrass/releases/download/v1.0/TouchGrass-v1.0-release.apk)**
+- **[View All Releases on GitHub](https://github.com/rudransh2607/TouchGrass/releases)**
 
 ---
 
 ## 🛠️ Building from Source
 ```bash
-git clone https://github.com/your-username/TouchGrass.git
+git clone https://github.com/rudransh2607/TouchGrass.git
 cd TouchGrass
 ./gradlew assembleRelease
 ```
@@ -33,3 +34,4 @@ cd TouchGrass
 
 ## 📄 License
 MIT License.
+
