@@ -17,21 +17,31 @@ android {
 
   signingConfigs {
     create("release") {
-      storeFile = file("../focusvault.keystore")
-      storePassword = "focusvault123"
-      keyAlias = "focusvault"
-      keyPassword = "focusvault123"
+      val keystorePath = System.getenv("KEYSTORE_PATH") ?: "../focusvault.keystore"
+      val ksFile = file(keystorePath)
+      if (ksFile.exists()) {
+        storeFile = ksFile
+        storePassword = System.getenv("KEYSTORE_PASSWORD") ?: "focusvault123"
+        keyAlias = System.getenv("KEY_ALIAS") ?: "focusvault"
+        keyPassword = System.getenv("KEY_PASSWORD") ?: "focusvault123"
+      }
     }
   }
 
   buildTypes {
     release {
       isMinifyEnabled = false
-      signingConfig = signingConfigs.getByName("release")
+      val releaseConfig = signingConfigs.findByName("release")
+      if (releaseConfig?.storeFile != null && releaseConfig.storeFile!!.exists()) {
+        signingConfig = releaseConfig
+      }
       proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
     }
     debug {
-      signingConfig = signingConfigs.getByName("release")
+      val releaseConfig = signingConfigs.findByName("release")
+      if (releaseConfig?.storeFile != null && releaseConfig.storeFile!!.exists()) {
+        signingConfig = releaseConfig
+      }
     }
   }
   compileOptions {
