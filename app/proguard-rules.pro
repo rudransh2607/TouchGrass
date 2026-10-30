@@ -11,8 +11,8 @@
 }
 
 # Preserve Accessibility Service & Device Admin entry points
--keep class com.focusvault.app.service.FocusAccessibilityService { *; }
--keep class com.focusvault.app.receiver.FocusDeviceAdminReceiver { *; }
--keep class com.focusvault.app.receiver.BootReceiver { *; }
--keep class com.focusvault.app.receiver.RecoveryReceiver { *; }
+-keep class com.touchgrass.app.service.FocusAccessibilityService { *; }
+-keep class com.touchgrass.app.receiver.FocusDeviceAdminReceiver { *; }
+-keep class com.touchgrass.app.receiver.BootReceiver { *; }
+-keep class com.touchgrass.app.receiver.RecoveryReceiver { *; }
 

@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-  namespace = "com.focusvault.app"
+  namespace = "com.touchgrass.app"
   compileSdk = 36
   defaultConfig {
     applicationId = "com.touchgrass.app"
@@ -17,13 +17,12 @@ android {
 
   signingConfigs {
     create("release") {
-      val keystorePath = System.getenv("KEYSTORE_PATH") ?: "../focusvault.keystore"
-      val ksFile = file(keystorePath)
+      val ksFile = rootProject.file("touchgrass.keystore")
       if (ksFile.exists()) {
         storeFile = ksFile
-        storePassword = System.getenv("KEYSTORE_PASSWORD") ?: "focusvault123"
-        keyAlias = System.getenv("KEY_ALIAS") ?: "focusvault"
-        keyPassword = System.getenv("KEY_PASSWORD") ?: "focusvault123"
+        storePassword = System.getenv("KEYSTORE_PASSWORD") ?: "touchgrass123"
+        keyAlias = System.getenv("KEY_ALIAS") ?: "touchgrass"
+        keyPassword = System.getenv("KEY_PASSWORD") ?: "touchgrass123"
       }
     }
   }
@@ -32,14 +31,14 @@ android {
     release {
       isMinifyEnabled = false
       val releaseConfig = signingConfigs.findByName("release")
-      if (releaseConfig?.storeFile != null && releaseConfig.storeFile!!.exists()) {
+      if (releaseConfig != null && releaseConfig.storeFile != null && releaseConfig.storeFile!!.exists()) {
         signingConfig = releaseConfig
       }
       proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
     }
     debug {
       val releaseConfig = signingConfigs.findByName("release")
-      if (releaseConfig?.storeFile != null && releaseConfig.storeFile!!.exists()) {
+      if (releaseConfig != null && releaseConfig.storeFile != null && releaseConfig.storeFile!!.exists()) {
         signingConfig = releaseConfig
       }
     }
